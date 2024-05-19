@@ -1,0 +1,38 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Login de Usuário</title>
+</head>
+<body>
+    <form id="userForm">
+        <select id="action" name="action" required>
+            <option value="register">Registrar</option>
+            <option value="login">Login</option>
+        </select>
+        <input type="text" id="username" name="username" placeholder="Username" required value="admin">
+        <input type="password" id="password" name="password" placeholder="Password" required value="admin123">
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const action = document.getElementById('action').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/src/Api.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action, username, password })
+            });
+            const data = await response.json();
+            document.getElementById('response').textContent = data.message;
+        });
+    </script>
+</body>
+</html>
