@@ -1,12 +1,16 @@
-# Projeto de Testes Unitários em PHP
+# Projeto de Testes Unitários e de Integração em PHP
 
 ## Descrição
 
-Este projeto demonstra a criação e execução de testes unitários em PHP utilizando o PHPUnit. Ele inclui exemplos de como registrar e autenticar usuários, com testes unitários correspondentes para verificar a funcionalidade.
+Este projeto demonstra a criação e execução de testes unitários e de integração em PHP utilizando o PHPUnit. Ele inclui exemplos de como registrar e autenticar usuários, com testes unitários e de integração correspondentes para verificar a funcionalidade.
 
 ## O que é Teste Unitário?
 
 Teste unitário é uma técnica de teste de software onde pequenas partes do código (unidades) são testadas isoladamente para garantir que funcionem corretamente. Os testes unitários são fundamentais para identificar bugs no início do desenvolvimento e garantir que cada parte do código funcione como esperado.
+
+## O que é Teste de Integração?
+
+Teste de integração verifica a interação entre diferentes módulos ou serviços do sistema, garantindo que eles funcionem juntos corretamente.
 
 ## Pré-requisitos
 
@@ -20,8 +24,8 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 1. **Clone o repositório**:
 
     ```bash
-    git clone https://github.com/faustinopsy/testes-unitarios.git
-    cd testes-unitarios
+    git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio
     ```
 
 2. **Instale as dependências do projeto**:
@@ -34,9 +38,11 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 
     ```
     ├── src/
-    │   └── User.php
+    │   ├── User.php
+    │   └── UserService.php
     ├── tests/
-    │   └── UserTest.php
+    │   ├── UserTest.php
+    │   └── UserServiceTest.php
     ├── vendor/
     ├── composer.json
     └── phpunit.xml
@@ -44,10 +50,19 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 
 ## Executando os Testes
 
-Após instalar as dependências, você pode executar os testes unitários utilizando o PHPUnit. Para isso, utilize o seguinte comando:
+### Testes Unitários
+
+Para executar os testes unitários, use o comando:
 
 ```bash
 ./vendor/bin/phpunit tests/UserTest.php
+```
+
+estes de Integração
+Para executar os testes de integração, use o comando:
+```bash
+./vendor/bin/phpunit tests/UserServiceTest.php
+
 ```
 
 

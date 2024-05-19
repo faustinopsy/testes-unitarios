@@ -1,6 +1,4 @@
 <?php
-
-// tests/UserTest.php
 namespace App\Testes;
 
 use PHPUnit\Framework\TestCase;
