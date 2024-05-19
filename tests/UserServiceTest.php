@@ -11,13 +11,13 @@ class UserServiceTest extends TestCase {
         $this->userService = new UserService($user);
     }
 
-    public function testRegisterUser() {
+    public function testRegistrarUser() {
         $result = $this->userService->registrarUser("integrationUser", "password123");
         $this->assertTrue($result, "Falha ao registrar usuário no teste de integração");
         fwrite(STDOUT, "Função testada: registrarUser - Registro de usuário com sucesso.\n");
     }
 
-    public function testRegisterExistingUser() {
+    public function testRegistrarUserExistente() {
         $this->userService->registrarUser("integrationUser", "password123");
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage("O nome de usuário já existe");
@@ -30,21 +30,21 @@ class UserServiceTest extends TestCase {
         }
     }
 
-    public function testAuthenticateUserWithCorrectCredentials() {
+    public function testLogarCorretamente() {
         $this->userService->registrarUser("integrationUser", "password123");
         $result = $this->userService->logarUser("integrationUser", "password123");
         $this->assertTrue($result, "Falha ao autenticar usuário com credenciais corretas no teste de integração");
         fwrite(STDOUT, "Função testada: logarUser - Autenticação bem-sucedida com credenciais corretas.\n");
     }
 
-    public function testAuthenticateUserWithIncorrectCredentials() {
+    public function testLogarIncorretamente() {
         $this->userService->registrarUser("integrationUser", "password123");
         $result = $this->userService->logarUser("integrationUser", "wrongpassword");
         $this->assertFalse($result, "Autenticação bem-sucedida com credenciais incorretas no teste de integração");
         fwrite(STDOUT, "Função testada: logarUser - Falha na autenticação com credenciais incorretas.\n");
     }
 
-    public function testAuthenticateNonExistentUser() {
+    public function testLogarUserInexistente() {
         $result = $this->userService->logarUser("nonexistentUser", "password123");
         $this->assertFalse($result, "Autenticação bem-sucedida para usuário inexistente no teste de integração");
         fwrite(STDOUT, "Função testada: logarUser - Falha na autenticação para usuário inexistente.\n");
