@@ -148,6 +148,52 @@ class UserTest extends TestCase {
 }
 
 ```
+## Coverage
+Code Coverage, ou Cobertura de Código, é uma métrica utilizada no desenvolvimento de software para medir a extensão em que o código-fonte de um programa é executado durante os testes automatizados. Em outras palavras, ele indica quais partes do código foram testadas e quais não foram.
+- para funcionar corretamente a geração dos html que são os relatórios é necessarios algumas configurações, uma delas é o aquivo xml "phpunit.xml" na raiz do projeto.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd"
+         cacheDirectory=".phpunit.cache">
+
+  <coverage>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+    <report>
+      <html outputDirectory="coverage-report" lowUpperBound="35" highLowerBound="70"/>
+    </report>
+  </coverage>
+
+  <testsuites>
+    <testsuite name="Your Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <logging/>
+</phpunit>
+
+
+```
+e o php.ini configurado com a extensão xdebug, que precisa baixar a versão compativel com php utilizado, https://pecl.php.net/package/xdebug/3.3.2/windows
+
+```
+extension=xdebug
+
+[xdebug]
+zend_extension ="C:/php/ext/php_xdebug.dll"
+xdebug.mode=coverage
+xdebug.start_with_request=yes
+```
+
+
 ## Contribuindo
 Sinta-se à vontade para contribuir com este projeto enviando pull requests. Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
 

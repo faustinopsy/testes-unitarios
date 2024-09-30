@@ -1,7 +1,8 @@
 {
     "name": "app/testes",
     "require": {
-        "phpunit/phpunit": "10"
+        "phpunit/phpunit": "10",
+        "phpunit/phpcov": "^9.0"
     },
     "autoload": {
         "psr-4": {
