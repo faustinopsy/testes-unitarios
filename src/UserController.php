@@ -1,7 +1,7 @@
 <?php
 namespace App\Testes;
 
-class UserService {
+class UserController {
     private $user;
 
     public function __construct(User $user) {

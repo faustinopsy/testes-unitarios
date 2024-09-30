@@ -24,7 +24,7 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 1. **Clone o repositório**:
 
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/faustinopsy/testes-unitarios.git
     cd seu-repositorio
     ```
 
@@ -39,10 +39,10 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
     ```
     ├── src/
     │   ├── User.php
-    │   └── UserService.php
+    │   └── UserController.php
     ├── tests/
     │   ├── UserTest.php
-    │   └── UserServiceTest.php
+    │   └── UserControllerTest.php
     ├── vendor/
     ├── composer.json
     └── phpunit.xml
@@ -61,7 +61,7 @@ Para executar os testes unitários, use o comando:
 estes de Integração
 Para executar os testes de integração, use o comando:
 ```bash
-./vendor/bin/phpunit tests/UserServiceTest.php
+./vendor/bin/phpunit tests/UserControllerTest.php
 
 ```
 
