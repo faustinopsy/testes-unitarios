@@ -193,6 +193,10 @@ xdebug.mode=coverage
 xdebug.start_with_request=yes
 ```
 
+após as configurações o comando de execução é:
+```
+./vendor/bin/phpunit ./tests --coverage-html relatorios/
+```
 
 ## Contribuindo
 Sinta-se à vontade para contribuir com este projeto enviando pull requests. Para grandes mudanças, por favor, abra uma issue primeiro para discutir o que você gostaria de mudar.
