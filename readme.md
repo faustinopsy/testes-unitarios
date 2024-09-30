@@ -25,7 +25,7 @@ Siga os passos abaixo para configurar o projeto em sua máquina local.
 
     ```bash
     git clone https://github.com/faustinopsy/testes-unitarios.git
-    cd seu-repositorio
+    cd testes-unitarios
     ```
 
 2. **Instale as dependências do projeto**:
